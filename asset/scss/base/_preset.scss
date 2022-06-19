@@ -1,0 +1,35 @@
+
+
+/*
+    @세팅구역
+*/
+body {
+    // min-width: ?세팅하시고
+    font-family: "Neuemontreal";
+    font-size: 1vw;
+    line-height: 20px;
+    letter-spacing: -.03vw;
+    color:var(--colorBg1);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+}
+
+.large-inner{
+    width: 100%;
+    padding: 0 3vw;
+}
+
+.small-inner {
+
+}
