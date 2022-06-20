@@ -6,12 +6,15 @@
     font-weight: 400;
 }
 @font-face {
-    font-family: 'XM-Traffic-Bold';
-    src:url('../font/webfonts_XM-Traffic-Bold/XM-Traffic-Bold.ttf.woff') format('woff'),
-        url('../font/webfonts_XM-Traffic-Bold/XM-Traffic-Bold.ttf.svg') format('svg'),
-        url('../font/webfonts_XM-Traffic-Bold/XM-Traffic-Bold.ttf.eot'),
-        url('XM-Traffic-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
-    font-weight: normal;
+    font-family: 'XM Traffic Regular';
     font-style: normal;
+    font-weight: normal;
+    src: local('XM Traffic Regular'), url('../font/xm-traffic-cufonfonts-webfont/XM\ Traffic.woff') format('woff');
+}
+@font-face {
+    font-family: 'XM Traffic Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('XM Traffic Bold'), url('../font/xm-traffic-cufonfonts-webfont/XM\ TrafficBd.woff') format('woff');
 }
 

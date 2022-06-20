@@ -5,11 +5,11 @@
 */
 body {
     // min-width: ?세팅하시고
-    font-family: "Neuemontreal";
-    font-size: 1vw;
+    font-family: "Neuemontreal", sans-serif;
+    font-size: 13px;
     line-height: 20px;
     letter-spacing: -.03vw;
-    color:var(--colorBg1);
+    color: #1d1d1d;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -27,9 +27,81 @@ body {
 
 .large-inner{
     width: 100%;
-    padding: 0 3vw;
+    padding: 0 38px;
 }
 
 .small-inner {
 
+}
+
+.btn {
+    position: relative;
+    border-radius: 15px;
+    font-family: 'XM Traffic Bold', sans-serif;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: #f4f4f4;
+    overflow: hidden;
+    .btn-wrap {
+        position: relative;
+        padding: 10px 32px 9px;
+        border: 1px solid #f4f4f4;
+        border-radius: 15px;
+        z-index: 1;
+        .text-box {
+            height: 11px;
+            text-transform: uppercase;
+            overflow: hidden;
+            .text {
+                display: inline-block;
+                height: 100%;
+                transition: .4s ease-in-out;
+                &::after {
+                    display: block;
+                    margin-top: 13px;
+                    color: #1d1d1d;
+                }
+                
+            }
+            .arrow {
+                display: inline-block;
+                width: 9px; height: 11px;
+                margin-left: 10px;
+                background: url('../images/arrow_white.svg') no-repeat;
+                transform: translateY(-200%);
+                transition: .4s ease-in-out;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 9px; height: 11px;
+                    margin-top: -22px;
+                    background: url('../images/arrow_white.svg') no-repeat;
+                    filter: invert(100%);
+                }
+            }
+        }
+    }
+    .btn-bg {
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        width: 0; height: 100%;
+        border-radius: 15px;
+        background-color: #f8f8f8;
+        transition: .4s ease-in-out;
+    }
+    &.hover {
+        .btn-wrap {
+            .text {
+                transform: translateY(-220%);
+            }
+            .arrow {
+                transform: translateY(0);
+            }
+        }
+        .btn-bg {
+            width: 100%;
+        }
+    }
 }
