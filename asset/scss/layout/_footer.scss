@@ -1,0 +1,26 @@
+.footer {
+    position: absolute;
+    bottom: 38px;
+    width: 100%;
+    text-transform: uppercase;
+    color: #f4f4f4;
+    .large-inner {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        span {
+            display: block;
+            font-size: 10px;
+            line-height: 1;
+        }
+        .link-footer {
+            &+.link-footer {
+                margin-left: 16px;
+            }
+        }
+        .btn-top {
+            text-transform: uppercase;
+            color: #f4f4f4;
+        }
+    }
+}

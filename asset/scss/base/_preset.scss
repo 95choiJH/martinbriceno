@@ -5,14 +5,17 @@
 */
 body {
     // min-width: ?세팅하시고
+    position: relative;
     font-family: "Neuemontreal", sans-serif;
     font-size: 13px;
     line-height: 20px;
-    letter-spacing: -.03vw;
+    letter-spacing: .03vw;
     color: #1d1d1d;
+    background: #f8f8f8;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 
@@ -31,15 +34,26 @@ body {
 }
 
 .small-inner {
+    width: 100%;
+    padding: 0 64px;
+}
 
+.clear {
+    clear: both;
+    overflow: hidden;
+}
+
+section {
+    padding: 64px 0;
 }
 
 .btn {
     position: relative;
     border-radius: 15px;
-    font-family: 'XM Traffic Bold', sans-serif;
-    font-size: 11px;
-    letter-spacing: -1px;
+    font-family: 'Khand', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .06vw;
     line-height: 1;
     color: #f4f4f4;
     overflow: hidden;
@@ -104,4 +118,11 @@ body {
             width: 100%;
         }
     }
+}
+
+.line {
+    display: block;
+    width: 100%; height: 1px;
+    background: #1d1d1d80;
+    box-sizing: border-box;
 }

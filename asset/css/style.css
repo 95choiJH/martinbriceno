@@ -1,21 +1,10 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;600&display=swap");
 @font-face {
   font-family: "Neuemontreal";
-  src: url(../font/NeueMontreal-Medium.otf) format("opentype");
+  src: url(../font/NeueMontreal-Regular.otf) format("opentype");
   font-weight: 400;
-}
-@font-face {
-  font-family: "XM Traffic Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("XM Traffic Regular"), url("../font/xm-traffic-cufonfonts-webfont/XM Traffic.woff") format("woff");
-}
-@font-face {
-  font-family: "XM Traffic Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: local("XM Traffic Bold"), url("../font/xm-traffic-cufonfonts-webfont/XM TrafficBd.woff") format("woff");
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -203,14 +192,17 @@ textarea::-webkit-outer-spin-button {
     @세팅구역
 */
 body {
+  position: relative;
   font-family: "Neuemontreal", sans-serif;
   font-size: 13px;
   line-height: 20px;
-  letter-spacing: -0.03vw;
+  letter-spacing: 0.03vw;
   color: #1d1d1d;
+  background: #f8f8f8;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .blind {
@@ -227,12 +219,27 @@ body {
   padding: 0 38px;
 }
 
+.small-inner {
+  width: 100%;
+  padding: 0 64px;
+}
+
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+
+section {
+  padding: 64px 0;
+}
+
 .btn {
   position: relative;
   border-radius: 15px;
-  font-family: "XM Traffic Bold", sans-serif;
-  font-size: 11px;
-  letter-spacing: -1px;
+  font-family: "Khand", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06vw;
   line-height: 1;
   color: #f4f4f4;
   overflow: hidden;
@@ -298,6 +305,14 @@ body {
   width: 100%;
 }
 
+.line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(29, 29, 29, 0.5019607843);
+  box-sizing: border-box;
+}
+
 .header {
   position: absolute;
   top: 38px;
@@ -321,51 +336,73 @@ body {
   content: "Let's talk";
 }
 
+.footer {
+  position: absolute;
+  bottom: 38px;
+  width: 100%;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+.footer .large-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer .large-inner span {
+  display: block;
+  font-size: 10px;
+  line-height: 1;
+}
+.footer .large-inner .link-footer + .link-footer {
+  margin-left: 16px;
+}
+.footer .large-inner .btn-top {
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
 .sc-intro {
   padding: 38px 0 26px;
-  font-family: "XM Traffic Regular", sans-serif;
   color: #f4f4f4;
   background: #1d1d1d;
 }
-.sc-intro .large-inner {
-  display: flex;
-  flex-direction: column;
+.sc-intro .intro-main {
+  padding: 135px 180px 95px 0;
+  float: right;
 }
-.sc-intro .large-inner .intro-main {
-  padding: 150px 0 110px;
-  margin-left: 59%;
-}
-.sc-intro .large-inner .intro-main h2 {
+.sc-intro .intro-main h2 {
+  font-family: "Khand", sans-serif;
   max-width: 307px;
   margin-bottom: 16px;
-  font-size: 38px;
+  font-size: 45px;
   line-height: 0.95;
 }
-.sc-intro .large-inner .intro-main p {
+.sc-intro .intro-main p {
   max-width: 300px;
   font-family: "Neuemontreal", sans-serif;
   margin-bottom: 40px;
   font-size: 15px;
   line-height: 1.2;
 }
-.sc-intro .large-inner .intro-main .btn .text::after {
+.sc-intro .intro-main .btn .text::after {
   content: "Scroll to discover";
 }
-.sc-intro .large-inner .intro-sub {
+.sc-intro .intro-sub {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-bottom: 3px;
   font-size: 13px;
 }
-.sc-intro .large-inner .intro-sub .link-page {
+.sc-intro .intro-sub .link-page {
   line-height: 1.1;
 }
-.sc-intro .large-inner .intro-sub .link-page + .link-page {
+.sc-intro .intro-sub .link-page + .link-page {
   margin-left: 25px;
 }
-.sc-intro .large-inner .intro-sub .coords {
+.sc-intro .intro-sub .coords {
   position: absolute;
   top: 50%;
   left: 59%;
@@ -373,9 +410,6 @@ body {
   transform: translateY(-50%);
 }
 
-.sc-about {
-  padding: 64px 0;
-}
 .sc-about .large-inner {
   position: relative;
 }
@@ -442,9 +476,6 @@ body {
   background-color: #1d1d1d;
 }
 
-.sc-work {
-  padding: 64px 0;
-}
 .sc-work .work-area {
   display: flex;
   flex-direction: row;
@@ -460,7 +491,8 @@ body {
   height: 95%;
   min-height: 100%;
   margin-left: 13px;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   color: #f8f8f8;
 }
@@ -502,13 +534,16 @@ body {
 .sc-work .work-area .work-item .large-inner .detail-area .design-area {
   display: flex;
   align-items: end;
-  font-family: "XM Traffic Bold", sans-serif;
-  font-size: 11px;
+  font-family: "Khand", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 .sc-work .work-area .work-item .large-inner .detail-area .design-area .round {
-  padding: 5px 33px;
+  padding: 8px 33px;
   border: 1px solid #f8f8f8;
   border-radius: 25px;
+  text-align: center;
+  line-height: 1;
 }
 .sc-work .work-area .work-item .large-inner .detail-area .design-area .round + .round {
   margin-left: 13px;
@@ -527,4 +562,248 @@ body {
 }
 .sc-work .work-area .work-item.AMS {
   background-image: url(../images/work_AMS.jpg);
+}
+
+.sc-playing {
+  text-align: center;
+  padding-bottom: 64px;
+}
+.sc-playing h2 {
+  margin-bottom: 16px;
+  font-family: "Khand", sans-serif;
+  font-size: 44px;
+  line-height: 1;
+}
+.sc-playing .desc {
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+.sc-playing .small-inner {
+  text-align: start;
+}
+.sc-playing .small-inner .playing-area {
+  margin-top: 96px;
+  border-left: 0;
+  border-right: 0;
+}
+.sc-playing .small-inner .playing-area .playing-item {
+  position: relative;
+}
+.sc-playing .small-inner .playing-area .playing-item h3 {
+  padding: 15px 0;
+  transition: 0.3s ease-out;
+}
+.sc-playing .small-inner .playing-area .playing-item img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-15%, -50%);
+  width: 50%;
+  max-width: 540px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+}
+.sc-playing .small-inner .playing-area .playing-item:hover h3 {
+  opacity: 0.6;
+  transform: translateX(16px);
+}
+.sc-playing .small-inner .playing-area .playing-item:hover img {
+  opacity: 1;
+}
+
+.sc-pr {
+  padding-bottom: 32px;
+}
+.sc-pr .clear {
+  padding-bottom: 51px;
+  border-bottom: 1px solid rgba(29, 29, 29, 0.5019607843);
+}
+.sc-pr .img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 64px;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+.sc-pr .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-pr .img-wrap .img-cover {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: #f8f8f8;
+}
+.sc-pr .text-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.sc-pr .text-area h2 {
+  max-width: 486px;
+  font-size: 34px;
+  line-height: 1.1;
+}
+.sc-pr .text-area p {
+  max-width: 478px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.sc-pr .clients-area {
+  float: right;
+  max-width: 478px;
+}
+.sc-pr .clients-area p {
+  margin-bottom: 30px;
+  font-family: "Khand", sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  text-decoration: underline;
+}
+.sc-pr .clients-area .clients-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.sc-pr .clients-area .clients-wrap .clients-title {
+  flex: 1 1 33%;
+  margin-bottom: 26px;
+  font-size: 16px;
+}
+.sc-pr .clients-area .clients-wrap .clients-title:nth-child(n+7) {
+  margin: 0;
+}
+.sc-pr .pr-detail {
+  display: flex;
+  padding: 51px 0;
+}
+.sc-pr .pr-detail .left-box {
+  flex: 1 1 37%;
+}
+.sc-pr .pr-detail .left-box .round {
+  display: inline-block;
+  padding: 3px 11px 2px;
+  border: 0.7px solid #1d1d1d;
+  border-radius: 12px;
+  font-family: "Khand", sans-serif;
+  font-size: 12px;
+}
+.sc-pr .pr-detail .right-box {
+  display: flex;
+  flex: 63%;
+  justify-content: space-between;
+  padding-right: 50px;
+}
+.sc-pr .pr-detail .right-box [class^=row] {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 38px;
+}
+.sc-pr .pr-detail .right-box [class^=row]:last-child {
+  margin: 0;
+}
+.sc-pr .pr-detail.approach-area .content-box {
+  max-width: 192px;
+}
+.sc-pr .pr-detail.approach-area .content-box em {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.sc-pr .pr-detail.approach-area .content-box p {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.02vw;
+}
+.sc-pr .pr-detail.experience-area .right-box {
+  flex-direction: column;
+}
+.sc-pr .pr-detail.experience-area .right-box .content-box {
+  width: 30%;
+}
+.sc-pr .pr-detail.experience-area .right-box .content-box em {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.sc-pr .pr-detail.experience-area .right-box .content-box p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.sc-pr .pr-detail.experience-area .right-box .content-box p:last-child {
+  margin: 0;
+}
+.sc-pr .pr-detail.awards-area {
+  padding-bottom: 0;
+}
+.sc-pr .pr-detail.awards-area .right-box {
+  flex-direction: column;
+}
+.sc-pr .pr-detail.awards-area .right-box .content-box {
+  width: 30%;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.curved {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  margin-top: -2px;
+  border-bottom-left-radius: 1.1vw;
+  border-bottom-right-radius: 1.1vw;
+  background-color: #f8f8f8;
+  z-index: 1;
+}
+
+.sc-talk {
+  position: relative;
+  padding: 162px 0 38px;
+  margin-top: -32px;
+  color: #f4f4f4;
+  text-align: center;
+  background: #1d1d1d;
+}
+.sc-talk .round {
+  display: inline-block;
+  padding: 9px 22px 8px;
+  border: 1px solid #f4f4f4;
+  border-radius: 20px;
+  font-family: "Khand", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.sc-talk .round::before {
+  content: "";
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #f8f8f8;
+  border-radius: 100%;
+}
+.sc-talk h2 {
+  margin: 26px 0 241px;
+  font-size: 93px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+.sc-talk h2 .link-talk {
+  display: inline-block;
+  height: 100%;
 }
