@@ -214,6 +214,51 @@ body {
   margin: -1px;
 }
 
+.cursor {
+  position: fixed;
+  top: -1%;
+  left: -1.2%;
+  width: 13px;
+  height: 13px;
+  border: 1px #1d1d1d;
+  border-radius: 100%;
+  background-color: hsla(0deg, 0%, 100%, 0.01);
+  -webkit-backdrop-filter: invert(100%);
+          backdrop-filter: invert(100%);
+  transform: none;
+  transition: width 0.3s, height 0.3s;
+  pointer-events: none;
+  z-index: 100;
+}
+.cursor span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.cursor span.hide {
+  display: none;
+}
+.cursor.cursor-work {
+  top: -11%;
+  left: -5.5%;
+  transform: translate(-50%, -50%);
+  width: 144px;
+  height: 144px;
+  background: #f8f8f8;
+}
+.cursor.cursor-talk {
+  top: -11%;
+  left: -5.5%;
+  transform: translate(-50%, -50%);
+  width: 144px;
+  height: 144px;
+  background-color: hsla(0deg, 0%, 100%, 0.01);
+}
+
 .large-inner {
   width: 100%;
   padding: 0 38px;
@@ -230,6 +275,7 @@ body {
 }
 
 section {
+  position: relative;
   padding: 64px 0;
 }
 
@@ -567,6 +613,7 @@ section {
 .sc-playing {
   text-align: center;
   padding-bottom: 64px;
+  z-index: 3;
 }
 .sc-playing h2 {
   margin-bottom: 16px;
@@ -598,7 +645,7 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-15%, -50%);
+  transform: translateY(-50%);
   width: 50%;
   max-width: 540px;
   -o-object-fit: cover;
@@ -608,6 +655,7 @@ section {
   pointer-events: none;
   transition: opacity 0.3s ease-out;
   opacity: 0;
+  z-index: 2;
 }
 .sc-playing .small-inner .playing-area .playing-item:hover h3 {
   opacity: 0.6;
@@ -619,6 +667,8 @@ section {
 
 .sc-pr {
   padding-bottom: 32px;
+  background-color: #f8f8f8;
+  z-index: 2;
 }
 .sc-pr .clear {
   padding-bottom: 51px;
@@ -766,7 +816,7 @@ section {
   border-bottom-left-radius: 1.1vw;
   border-bottom-right-radius: 1.1vw;
   background-color: #f8f8f8;
-  z-index: 1;
+  z-index: 2;
 }
 
 .sc-talk {
@@ -797,13 +847,16 @@ section {
   background: #f8f8f8;
   border-radius: 100%;
 }
-.sc-talk h2 {
-  margin: 26px 0 241px;
+.sc-talk .link-talk {
+  display: block;
+  height: 100%;
+  margin-bottom: 241px;
+}
+.sc-talk .link-talk h2 {
+  display: inline-block;
+  margin-top: 26px;
+  margin-right: 13px;
   font-size: 93px;
   line-height: 0.8;
   text-transform: uppercase;
-}
-.sc-talk h2 .link-talk {
-  display: inline-block;
-  height: 100%;
 }

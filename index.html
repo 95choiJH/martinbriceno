@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div class="cursor">
+        <span class="cursor-work hide">SEE CASE</span>
+        <span class="cursor-talk hide">EMAIL</span>
+    </div>
     <header class="header">
         <div class="large-inner">
             <h1 class="logo"><a href=""><img src="./asset/images/logo.svg" alt=""></a></h1>
@@ -33,7 +37,7 @@
                 <div class="intro-main">
                     <h2>Digital Designer and Art Director currently based in Cuzco - Peru</h2>
                     <p>Hello, I am Martin Briceno a designer from Lima, Peru. Currently working as an independent Digital Designer and Art Director.</p>
-                    <button class="btn-scroll btn">
+                    <button class="scroll-about btn">
                         <div class="btn-wrap">
                             <div class="text-box">
                                 <span class="text">Scroll to discover</span>
@@ -79,7 +83,7 @@
                 <div class="selfie">
                     <img src="./asset/images/selfie.jpg" alt="Martin Briceno's photo">
                 </div>
-                <button class="btn-scroll btn">
+                <button class="scroll-work btn">
                     <div class="btn-wrap">
                         <div class="text-box">
                             <span class="text">explore my work</span>
@@ -481,8 +485,10 @@
         <section class="sc-talk">
             <div class="talk-wrap">
                 <span class="round">have a project in mind?</span>
-                <h2><a href="" class="link-talk">Let’s talk</a></h2>
-                <i class="smile"></i>
+                <a href="" class="link-talk">
+                    <h2>Let’s talk</h2>
+                    <img src="./asset/images/smile.svg" alt="smile" class="smile">
+                </a>
             </div>
         </section>
     </main>
@@ -514,6 +520,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./asset/js/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>

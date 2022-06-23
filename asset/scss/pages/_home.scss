@@ -208,6 +208,7 @@
 .sc-playing {
     text-align: center;
     padding-bottom: 64px;
+    z-index: 3;
     h2 {
         margin-bottom: 16px;
         font-family: 'Khand', sans-serif;
@@ -233,13 +234,14 @@
                 img {
                     position: absolute;
                     top: 50%; left: 50%;
-                    transform: translate(-15%, -50%);
+                    transform: translateY(-50%);
                     width: 50%; max-width: 540px;
                     object-fit: cover;
                     object-position: center;
                     pointer-events: none;
                     transition: opacity .3s ease-out;
                     opacity: 0;
+                    z-index: 2;
                 }
                 &:hover {
                     h3 {
@@ -257,6 +259,8 @@
 
 .sc-pr {
     padding-bottom: 32px;
+    background-color: #f8f8f8;
+    z-index: 2;
     .clear {
         padding-bottom: 51px;
         border-bottom: 1px solid #1d1d1d80;
@@ -402,7 +406,7 @@
     border-bottom-left-radius: 1.1vw;
     border-bottom-right-radius: 1.1vw;
     background-color: #f8f8f8;
-    z-index: 1;
+    z-index: 2;
 }
 .sc-talk {
     position: relative;
@@ -429,14 +433,17 @@
             border-radius: 100%;
         }
     }
-    h2 {
-        margin: 26px 0 241px;   
-        font-size: 93px;
-        line-height: .8;
-        text-transform: uppercase;
-        .link-talk {
+    .link-talk {
+        display: block;
+        height: 100%;
+        margin-bottom: 241px;
+        h2 {
             display: inline-block;
-            height: 100%;
+            margin-top: 26px;   
+            margin-right: 13px;
+            font-size: 93px;
+            line-height: .8;
+            text-transform: uppercase;
         }
     }
 }

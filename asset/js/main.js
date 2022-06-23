@@ -1,4 +1,59 @@
 $(function(){
+    $(document).mousemove(function(e){
+        mouseX = e.clientX + "px";
+        mouseY = e.clientY + "px";
+        gsap.to('.cursor', {
+            x: mouseX,
+            y: mouseY
+        })
+        // console.log(e.target.closest('.sc-work'));
+        if(e.target.closest('.work-area') != null) {
+            $('.cursor').addClass('cursor-work').children('.cursor-work').removeClass('hide')
+            gsap.to('.cursor', {
+                x: mouseX,
+                y: mouseY
+            })
+        } else if (e.target.closest('.link-talk') != null) {
+            $('.cursor').addClass('cursor-talk').children('.cursor-talk').removeClass('hide')
+
+        } else if(e.target.closest('a, button') != null) {
+            gsap.to('.cursor', {
+                scale: 3,
+            })
+        }else {
+            $('.cursor').removeClass('cursor-talk')
+            $('.cursor').removeClass('cursor-work')
+            $('.cursor span').addClass('hide');
+            gsap.to('.cursor', {
+                scale: 1,
+            })
+        }
+        // if(e.target.closest('.sc-work') != null) {
+        //     $('.cursor').addClass('cursor-work')
+        //     gsap.to('.cursor', {
+        //         x: mouseX + "15px",
+        //         y: mouseY + "7px"
+        //     })
+        // } else {
+        //     $('.cursor').removeClass('cursor-work')
+        // }
+    })
+
+    // $(document).mouseover(function(e){
+    //     if('a') {
+    //         $('.cursor').addClass('scale')
+    //     }
+    // })
+
+    // $('.cursor').bind('over', function(){
+    //     if() {
+    //         $(this).addClass('scale');
+    //     }
+    // })
+    // $('.cursor').trigger('over');
+
+    // console.log('a'.mouseover);
+    
 
     gsap.to('.sc-work .work-area', {
         scrollTrigger: {
@@ -17,8 +72,21 @@ $(function(){
     $('.btn').hover(function(){
         $(this).toggleClass('hover');
     })
+
+    $('.scroll-about').click(function(){
+        $('html,body').animate({
+            scrollTop: $(".sc-about").offset().top}, 1000, 'easeInOutQuart');
+    })
+    $('.scroll-work').click(function(){
+        $('html,body').animate({
+            scrollTop: $(".work-area").offset().top}, 1000, 'easeInOutQuart');
+    })
+    $('.btn-top').click(function(){
+        $('html, body').animate({scrollTop:0}, 2000)
+    })
+
     show = gsap.utils.toArray('.show'); 
-    show.forEach((show, i) => {
+    show.forEach((show) => {
         gsap.fromTo(show,{
             y: 50,
             opacity: 0
@@ -63,13 +131,40 @@ $(function(){
         } ,{
             width: '100%', 
             duration: .5,
+            delay: .5,
             scrollTrigger: {
                 trigger: line,
-                start: '5000% bottom',
+                start: '7000% bottom',
                 // maekers: true,
             }
         })
     })
+
+    
+
+    $('.playing-item').hover(function(e){
+        var ratio = 100 / $(this).width();
+        var imgX = e.offsetX * ratio * .4 - 20;
+        gsap.to($(this).children('img'), {
+            xPercent: imgX,
+            ease: Power1.easeOut,
+        })
+    }, function(){
+        gsap.to($(this).children('img'), {
+            xPercent: 0,
+            ease: Power1.easeOut,
+        })
+    })
+
+    $('.playing-item').mousemove(function(e){
+        var ratio = 100 / $(this).width();
+        var imgX = e.offsetX * ratio * .4 - 20;
+        gsap.to($(this).children('img'), {
+            xPercent: imgX,
+            ease: Power1.easeOut,
+        })
+    })
+
     
     gsap.fromTo('.sc-pr .img-cover', {
         height: '100%'
@@ -83,6 +178,38 @@ $(function(){
         }
     })
 
+    gsap.fromTo('.sc-talk', {
+        yPercent: -50
+    }, {
+        yPercent: 0,
+        scrollTrigger: {
+            trigger: '.sc-talk',
+            start: '50% bottom',
+            end: '150% bottom',
+            // markers: true,
+            scrub: 1
+        }
+    })
+
+    t1 = gsap.timeline({
+        repeat: -1,
+    })
+    t1.to('.smile', {
+        delay: 2,
+        rotation: 220,
+        duration: 1,
+        ease: Power2.easeInOut,
+    })
+    .to('.smile', {
+        rotation: 140,
+        duration: 1,
+        ease: Back.easeInOut,
+    })
+    .to('.smile', {
+        rotation: 360,
+        duration: 1,
+        ease: Back.easeOut
+    })
 
 
 })

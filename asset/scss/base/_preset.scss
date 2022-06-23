@@ -27,7 +27,42 @@ body {
     clip: rect(0 0 0 0);
     margin: -1px;
 }
-
+.cursor {
+    position: fixed;
+    top: -1%; left: -1.2%; 
+    width: 13px; height: 13px;
+    border: 1px #1d1d1d;
+    border-radius: 100%;
+    background-color: hsla(0,0%,100%,.01);
+    backdrop-filter: invert(100%);
+    transform: none;
+    transition: width .3s, height .3s;
+    pointer-events: none;
+    z-index: 100;
+    span{
+        display: block;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 12px;
+        white-space: nowrap;
+        &.hide {
+            display: none;
+        }
+    }
+    &.cursor-work {
+        top: -11%; left: -5.5%;
+        transform: translate(-50%, -50%);
+        width: 144px; height: 144px;
+        background: #f8f8f8;
+    }
+    &.cursor-talk {
+        top: -11%; left: -5.5%;
+        transform: translate(-50%, -50%);
+        width: 144px; height: 144px;
+        background-color: hsla(0,0%,100%,.01);
+    }
+}
 .large-inner{
     width: 100%;
     padding: 0 38px;
@@ -44,6 +79,7 @@ body {
 }
 
 section {
+    position: relative;
     padding: 64px 0;
 }
 
