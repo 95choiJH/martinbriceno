@@ -6,7 +6,6 @@ $(function(){
             x: mouseX,
             y: mouseY
         })
-        // console.log(e.target.closest('.sc-work'));
         if(e.target.closest('.work-area') != null) {
             $('.cursor').addClass('cursor-work').children('.cursor-work').removeClass('hide')
             gsap.to('.cursor', {
@@ -28,46 +27,42 @@ $(function(){
                 scale: 1,
             })
         }
-        // if(e.target.closest('.sc-work') != null) {
-        //     $('.cursor').addClass('cursor-work')
-        //     gsap.to('.cursor', {
-        //         x: mouseX + "15px",
-        //         y: mouseY + "7px"
-        //     })
-        // } else {
-        //     $('.cursor').removeClass('cursor-work')
-        // }
     })
-
-    // $(document).mouseover(function(e){
-    //     if('a') {
-    //         $('.cursor').addClass('scale')
-    //     }
-    // })
-
-    // $('.cursor').bind('over', function(){
-    //     if() {
-    //         $(this).addClass('scale');
-    //     }
-    // })
-    // $('.cursor').trigger('over');
-
-    // console.log('a'.mouseover);
     
+    if (matchMedia("screen and (max-width: 830px)").matches) {
+        workItem = gsap.utils.toArray('.work-item');
+        workItem.forEach((workItem) => {
+            gsap.fromTo(workItem, {
+                y: 100,
+                scale: .75
+            }, {
+                y: 0,
+                scale: 1,
+                transformOrigin:"center",
+                scrollTrigger: {
+                    trigger: '.work-area',
+                    start:"top bottom",
+                    scrub: .5,
+                    markers: true,
+                }
+            })
+        })
+    } 
 
+    
     gsap.to('.sc-work .work-area', {
         scrollTrigger: {
             trigger:'.work-item',
-            start:"top top", // ['트리거', '윈도우']
-            // end:"bottom bottom", // ['트리거', '윈도우']
-            end:"+=900%", // 5배 영역 크게
-            // markers: true,
-            scrub: .5, // 반복효과
+            start:"top top",
+            end:"+=900%",
+            //
+            scrub: .5,
 
             pin: '.sc-work',
         },
         xPercent: -366
     })
+    
 
     $('.btn').hover(function(){
         $(this).toggleClass('hover');
@@ -210,6 +205,4 @@ $(function(){
         duration: 1,
         ease: Back.easeOut
     })
-
-
 })
