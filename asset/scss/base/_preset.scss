@@ -51,13 +51,13 @@ body {
         }
     }
     &.cursor-work {
-        top: -11%; left: -5.5%;
+        top: 0; left: -6%;
         transform: translate(-50%, -50%);
         width: 144px; height: 144px;
         background: #f8f8f8;
     }
     &.cursor-talk {
-        top: -11%; left: -5.5%;
+        top: 0%; left: -6%;
         transform: translate(-50%, -50%);
         width: 144px; height: 144px;
         background-color: hsla(0,0%,100%,.01);

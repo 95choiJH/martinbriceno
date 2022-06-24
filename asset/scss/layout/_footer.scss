@@ -22,5 +22,45 @@
             text-transform: uppercase;
             color: #f4f4f4;
         }
+        .mobile-inner {
+            display: flex;
+        }
+    }
+}
+
+@media all and (max-width:830px) {
+    .footer {
+        bottom: 45vw;
+        .large-inner {
+            display: block;
+            text-align: center;
+            .content-box {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                span {
+                    width: 45%;
+                    text-align: right;
+                }
+                a {
+                    text-align: left;
+                }
+                &.social-box {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -30vw;
+                    span {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            .btn-top {
+                display: none;
+            }
+        }
     }
 }
