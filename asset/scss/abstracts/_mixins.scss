@@ -13,3 +13,29 @@
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical; /* autoprefixer: off */
 }
+
+// @mixin  ellipsis($font-size, $line-height, $lines) {
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-size: $font-size;
+//     line-height: $line-height;
+
+//     @if($lines > 1){
+//     max-height: $line-height * $lines;
+//     display: -webkit-box;
+//     -webkit-line-clamp: $lines;
+//     -webkit-box-orient: vertical; /* autoprefixer: off */
+//     }@else{
+//         white-space: nowrap;
+//     }
+// }
+
+
+
+// @mixin clear {
+//     &::after{
+//         content: "";
+//         clear: both;
+//         display: block;
+//     }
+// }

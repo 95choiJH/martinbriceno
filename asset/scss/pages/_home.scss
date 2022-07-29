@@ -128,14 +128,12 @@
 .sc-work {
     .work-area {
         display: flex;
-        flex-direction: row;
         height: 100vh;
         .work-item {
+            /* padding값 수정, 백그라운드 이미지 수정*/
             position: relative;
-            display: flex;
-            flex-direction: column-reverse;
-            flex-shrink: 0;
-            width: 100%; max-width: 92%;
+            display: block;
+            width: 100%; min-width: 92%;
             height: 95%; min-height: 100%;
             margin-left: 13px;
             background-size: cover;
@@ -149,8 +147,9 @@
                 background: linear-gradient(0deg,rgba(0,0,0,.94),transparent);
             }
             .large-inner {
+                position: absolute;
+                bottom: 15px;
                 z-index: 1;
-                padding-bottom: 5px;
                 .work-title {
                     margin: 13px 0 48px;
                     font-size: 56px;
@@ -452,6 +451,7 @@
         }
     }
     .not-awards-mobile {
+        flex: 63%;
         display: block;
     }
     .awards-mobile {
@@ -499,7 +499,7 @@
         }
     }
     .link-talk {
-        display: block;
+        display: inline-block;
         height: 100%;
         margin-bottom: 241px;
         h2 {
@@ -540,6 +540,7 @@
                 flex: 90%;
             }
         }
+        .not-awards-mobile {flex: 90%}
     }
 } 
 @media all and (max-width:1110px) {
@@ -704,15 +705,16 @@
         }
     }
     .sc-work {
+        padding: 0 4vw;
         .work-area {
             display: block;
-            flex-direction: unset;
             height: 100%;
             .work-item {
                 position: sticky;
-                top: 6vh;
+                top: 1vh;
                 flex-direction: column;
                 padding-top: 5em;
+                margin: 0;
                 color: #1d1d1d;
                 .dimmed {
                     display: none;
@@ -721,8 +723,10 @@
                     background-image: none;
                 }
                 .large-inner {
+                    position: relative;
                     background: #EDEDED;
                     padding: 1.5rem 1rem 1rem;
+                    border: 1px solid #d4d4d4;
                     border-radius: 4vw;
                     .title-area {
                         display: flex;

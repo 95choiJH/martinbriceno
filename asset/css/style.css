@@ -217,7 +217,7 @@ body {
 .cursor {
   position: fixed;
   top: -1%;
-  left: -1.2%;
+  left: -1%;
   width: 13px;
   height: 13px;
   border: 1px #1d1d1d;
@@ -243,17 +243,15 @@ body {
   display: none;
 }
 .cursor.cursor-work {
-  top: 0;
-  left: -6%;
-  transform: translate(-50%, -50%);
+  top: -72px;
+  left: -72px;
   width: 144px;
   height: 144px;
   background: #f8f8f8;
 }
 .cursor.cursor-talk {
-  top: 0%;
-  left: -6%;
-  transform: translate(-50%, -50%);
+  top: -72px;
+  left: -72px;
   width: 144px;
   height: 144px;
   background-color: hsla(0deg, 0%, 100%, 0.01);
@@ -364,15 +362,12 @@ section {
   .large-inner {
     padding: 0 13px;
   }
-
   .small-inner {
     padding: 0 4vw;
   }
-
   .btn .btn-wrap {
     padding: 10px 30px;
   }
-
   section {
     padding-top: 3.5rem;
     padding-bottom: 0;
@@ -613,16 +608,14 @@ section {
 
 .sc-work .work-area {
   display: flex;
-  flex-direction: row;
   height: 100vh;
 }
 .sc-work .work-area .work-item {
+  /* padding값 수정, 백그라운드 이미지 수정*/
   position: relative;
-  display: flex;
-  flex-direction: column-reverse;
-  flex-shrink: 0;
+  display: block;
   width: 100%;
-  max-width: 92%;
+  min-width: 92%;
   height: 95%;
   min-height: 100%;
   margin-left: 13px;
@@ -640,8 +633,9 @@ section {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.94), transparent);
 }
 .sc-work .work-area .work-item .large-inner {
+  position: absolute;
+  bottom: 15px;
   z-index: 1;
-  padding-bottom: 5px;
 }
 .sc-work .work-area .work-item .large-inner .work-title {
   margin: 13px 0 48px;
@@ -947,6 +941,7 @@ section {
   white-space: nowrap;
 }
 .sc-pr .not-awards-mobile {
+  flex: 63%;
   display: block;
 }
 .sc-pr .awards-mobile {
@@ -999,7 +994,7 @@ section {
   border-radius: 100%;
 }
 .sc-talk .link-talk {
-  display: block;
+  display: inline-block;
   height: 100%;
   margin-bottom: 241px;
 }
@@ -1025,12 +1020,13 @@ section {
   .sc-intro .intro-main {
     padding-right: 11.5vw;
   }
-
   .sc-about .large-inner .text-wrap .about-small-text {
     gap: 5vw;
   }
-
   .sc-pr .pr-detail .right-box {
+    flex: 90%;
+  }
+  .sc-pr .not-awards-mobile {
     flex: 90%;
   }
 }
@@ -1038,7 +1034,6 @@ section {
   .sc-intro .intro-main {
     padding-right: 4vw;
   }
-
   .sc-about .large-inner .text-wrap .about-text {
     display: block;
   }
@@ -1052,7 +1047,6 @@ section {
     top: 40px;
     right: 50px;
   }
-
   .sc-pr .text-area {
     display: block;
   }
@@ -1117,7 +1111,6 @@ section {
     position: unset;
     transform: none;
   }
-
   .sc-about {
     padding: 0;
   }
@@ -1177,18 +1170,20 @@ section {
     right: 0;
     width: 100%;
   }
-
+  .sc-work {
+    padding: 0 4vw;
+  }
   .sc-work .work-area {
     display: block;
-    flex-direction: unset;
     height: 100%;
   }
   .sc-work .work-area .work-item {
     position: -webkit-sticky;
     position: sticky;
-    top: 6vh;
+    top: 1vh;
     flex-direction: column;
     padding-top: 5em;
+    margin: 0;
     color: #1d1d1d;
   }
   .sc-work .work-area .work-item .dimmed {
@@ -1198,8 +1193,10 @@ section {
     background-image: none;
   }
   .sc-work .work-area .work-item .large-inner {
+    position: relative;
     background: #EDEDED;
     padding: 1.5rem 1rem 1rem;
+    border: 1px solid #d4d4d4;
     border-radius: 4vw;
   }
   .sc-work .work-area .work-item .large-inner .title-area {
@@ -1244,7 +1241,6 @@ section {
   .sc-work .work-area .work-item .large-inner .detail-area .design-area .round + .round {
     margin: 0;
   }
-
   .sc-playing .small-inner .playing-area.pc-ver {
     display: none;
   }
@@ -1254,7 +1250,6 @@ section {
   .sc-playing .small-inner .playing-area .playing-item img {
     position: unset;
   }
-
   .sc-pr .text-area h2 {
     font-size: 6vw;
   }
@@ -1293,7 +1288,6 @@ section {
   .sc-pr .awards-mobile {
     display: block;
   }
-
   .sc-talk {
     padding: 60vw 0;
   }
