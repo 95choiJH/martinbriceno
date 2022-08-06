@@ -12,10 +12,6 @@ $(function(){
                 })
                 if(e.target.closest('.work-area') != null) {
                     $('.cursor').addClass('cursor-work').children('.see-case').removeClass('hide')
-                    gsap.to('.cursor', {
-                        x: mouseX,
-                        y: mouseY
-                    })
                 } else if (e.target.closest('.link-talk') != null) {
                     $('.cursor').addClass('cursor-talk').children('.email').removeClass('hide')
         
