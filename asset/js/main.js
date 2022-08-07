@@ -269,11 +269,13 @@ $(function(){
         $(this).toggleClass('hover');
     })
 
-    $('.scroll-about').click(function(){
+    $('.scroll-about').click(function(e){
+        e.preventDefault();
         $('html,body').animate({
             scrollTop: $(".sc-about").offset().top}, 1000, 'easeInOutQuart');
     })
-    $('.scroll-work').click(function(){
+    $('.scroll-work').click(function(e){
+        e.preventDefault();
         $('html,body').animate({
             scrollTop: $(".work-area").offset().top}, 1000, 'easeInOutQuart');
     })
