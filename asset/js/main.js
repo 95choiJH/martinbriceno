@@ -1,11 +1,13 @@
 $(function(){
     
     $(window).bind("load resize", function() {
-        var width_size = window.outerWidth;
-        if (width_size >= 830) {
+        var innerWidth = window.innerWidth;
+        var innerHeight = window.innerHeight;
+        var outerWidth = window.outerWidth;
+        if (outerWidth >= 830) {
             $(document).mousemove(function(e){
-                mouseX = e.clientX + "px";
-                mouseY = e.clientY + "px";
+                mouseX = (e.clientX * 100)/innerWidth + "vw";
+                mouseY = (e.clientY * 100)/innerHeight + "vh";
                 gsap.set('.cursor', {
                     x: mouseX,
                     y: mouseY
@@ -22,7 +24,7 @@ $(function(){
                 } else {
                     $('.cursor').removeClass('cursor-talk')
                     $('.cursor').removeClass('cursor-work')
-                    $('.cursor span').addClass('hide');
+                    $('.cursor .cursor-transform').addClass('hide');
                     gsap.to('.cursor', {
                         scale: 1,
                     })

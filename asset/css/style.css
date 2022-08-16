@@ -59,6 +59,14 @@ table {
 /*
     @세팅구역
 */
+body {
+  font-size: 14px;
+  color: var(--colorBg1);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 input,
 textarea,
 select,
@@ -92,7 +100,6 @@ a:hover, a:focus {
 
 button {
   border: 0;
-  padding: 0;
   background-color: transparent;
   cursor: pointer;
 }
@@ -216,8 +223,8 @@ body {
 
 .cursor {
   position: fixed;
-  top: -1%;
-  left: -1%;
+  top: -6px;
+  left: -15px;
   width: 13px;
   height: 13px;
   border: 1px #1d1d1d;
@@ -230,7 +237,7 @@ body {
   pointer-events: none;
   z-index: 100;
 }
-.cursor span {
+.cursor .cursor-transform {
   display: block;
   position: absolute;
   top: 50%;
@@ -239,7 +246,7 @@ body {
   font-size: 12px;
   white-space: nowrap;
 }
-.cursor span.hide {
+.cursor .cursor-transform.hide {
   display: none;
 }
 .cursor.cursor-work {
@@ -385,7 +392,10 @@ section {
   justify-content: space-between;
   align-items: center;
 }
-.header .large-inner img {
+.header .large-inner .logo a {
+  display: block;
+}
+.header .large-inner .logo img {
   height: 13px;
 }
 .header .large-inner .smalltext-box {
@@ -506,7 +516,7 @@ section {
   font-size: 45px;
   line-height: 0.95;
 }
-.sc-intro .intro-main p {
+.sc-intro .intro-main h3 {
   max-width: 300px;
   font-family: "Neuemontreal", sans-serif;
   margin-bottom: 40px;
@@ -587,6 +597,7 @@ section {
   transform: translateY(-9%);
 }
 .sc-about .large-inner .btn {
+  display: inline-block;
   position: absolute;
   bottom: 0;
   right: 39px;
@@ -847,7 +858,7 @@ section {
   float: right;
   max-width: 478px;
 }
-.sc-pr .clients-area p {
+.sc-pr .clients-area h3 {
   margin-bottom: 30px;
   font-family: "Khand", sans-serif;
   font-size: 20px;
@@ -1257,7 +1268,6 @@ section {
     font-size: 4vw;
   }
   .sc-pr .clients-area p {
-    margin-top: 50px 0 25px;
     font-size: 3.8vw;
     letter-spacing: 0.2vw;
   }
