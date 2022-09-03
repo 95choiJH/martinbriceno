@@ -10,7 +10,7 @@
         width: 100%;
         span {
             display: block;
-            font-size: 10px;
+            font-size: 0.833rem;
             line-height: 1;
         }
         .link-footer {
@@ -24,18 +24,24 @@
         }
         .mobile-inner {
             display: flex;
+            justify-content: space-between;
+            width: 100%; 
         }
+    }
+    .reverse {
+        display: flex;
+        gap: 100px;
     }
 }
 
-@media all and (max-width:830px) {
+@media all and (max-width:960px) {
     .footer {
-        bottom: 45vw;
         .large-inner {
             display: block;
             text-align: center;
             .content-box {
                 display: flex;
+                justify-content: center;
                 align-items: center;
                 gap: 16px;
                 span {
@@ -48,10 +54,8 @@
                 &.social-box {
                     display: flex;
                     flex-direction: column;
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
                     bottom: -30vw;
+                    margin-top: 84px;
                     span {
                         width: 100%;
                         text-align: center;
@@ -61,6 +65,11 @@
             .btn-top {
                 display: none;
             }
+        }
+        .reverse {
+            display: flex;
+            gap: 0;
+            flex-direction: column-reverse;
         }
     }
 }

@@ -4,7 +4,7 @@ $(function(){
         var innerWidth = window.innerWidth;
         var innerHeight = window.innerHeight;
         var outerWidth = window.outerWidth;
-        if (outerWidth >= 830) {
+        if (outerWidth >= 960) {
             $(document).mousemove(function(e){
                 mouseX = (e.clientX * 100)/innerWidth + "vw";
                 mouseY = (e.clientY * 100)/innerHeight + "vh";
@@ -80,7 +80,7 @@ $(function(){
 
     ScrollTrigger.saveStyles(".work-item");
     ScrollTrigger.matchMedia({
-        "(min-width: 830px)": function() {
+        "(min-width: 960px)": function() {
             gsap.to('.sc-work .work-area', {
                 xPercent: -92 * ($('.work-item').length - 1), 
                 scrollTrigger: {
@@ -156,20 +156,19 @@ $(function(){
                 }
             })
         
-            gsap.fromTo('.sc-talk', {
-                yPercent: -50
+            gsap.fromTo('.move', {
+                yPercent: -200
             }, {
                 yPercent: 0,
                 scrollTrigger: {
-                    trigger: '.sc-talk',
-                    start: '50% bottom',
-                    end: '150% bottom',
+                    trigger: '.move',
+                    start: '-100% top',
                     // markers: true,
                     scrub: 1
                 }
             })
         },
-        "(max-width: 829px)": function() {
+        "(max-width: 959px)": function() {
             workItem = gsap.utils.toArray('.work-item');
             workItem.forEach((workItem) => {
                 gsap.fromTo(workItem,{
@@ -248,14 +247,13 @@ $(function(){
                 }
             })
         
-            gsap.fromTo('.sc-talk', {
-                yPercent: -50
+            gsap.fromTo('.move', {
+                yPercent: -200
             }, {
                 yPercent: 0,
                 scrollTrigger: {
-                    trigger: '.sc-talk',
-                    start: '50% bottom',
-                    end: '150% bottom',
+                    trigger: '.move',
+                    start: '-100% top',
                     // markers: true,
                     scrub: 1
                 }

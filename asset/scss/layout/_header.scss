@@ -1,6 +1,6 @@
 .header {
     position: absolute;
-    top: 38px;
+    top: 3.167rem;
     width: 100%;
     color: #f4f4f4;
     z-index: 1;
@@ -10,7 +10,7 @@
         align-items: center;
         .logo {
             a {
-                display: block;
+                display: inline-block;
             }
             img { 
                 height: 13px;
@@ -22,8 +22,9 @@
             justify-content: space-between;
         }
         .small-text {
-            font-size: 11px;
+            font-size: .688rem;
             line-height: 1.2;
+            white-space: pre-line;
         }
         .text {
             &::after {
@@ -33,20 +34,15 @@
     }
 }
 
-@media all and (max-width:830px) {
-    .header {
-        top: 24px;
-        .large-inner {
-            display: flex;
-            align-items: flex-start;
-            .smalltext-box {
-                display: inline-block;
-                width: auto;
-                .small-text {
-                    display: block;
-                    font-size: 10px;
-                    margin-bottom: 20px;
-                }
+@media all and (max-width:960px) {
+    .header .large-inner {
+        align-items: flex-start;
+        .smalltext-box {
+            display: inline-block;
+            width: auto;
+            .small-text {
+                display: block;
+                margin-bottom: 20px;
             }
         }
     }
