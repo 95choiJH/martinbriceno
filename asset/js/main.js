@@ -5,6 +5,7 @@ $(function(){
         var innerHeight = window.innerHeight;
         var outerWidth = window.outerWidth;
         if (outerWidth >= 960) {
+            $('.cursor').removeClass('hide');
             $(document).mousemove(function(e){
                 mouseX = (e.clientX * 100)/innerWidth + "vw";
                 mouseY = (e.clientY * 100)/innerHeight + "vh";
@@ -32,6 +33,7 @@ $(function(){
                 $('.playing-item').mousemove(function(e){
                     var ratio = 100 / $(this).width();
                     var imgX = e.offsetX * ratio *.4 - 20;
+                    console.log(e.offsetX);
                     gsap.to($(this).children('img'), {
                         xPercent: imgX,
                         ease: Power1.easeOut,
@@ -39,6 +41,7 @@ $(function(){
                 })
             })
         } else {
+            $('.cursor').addClass('hide');
             $('.playing-item').click(function(){
                 if(!$(this).hasClass('open')) {
                     gsap.to($(this), .8,{

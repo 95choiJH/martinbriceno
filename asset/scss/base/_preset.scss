@@ -59,6 +59,9 @@ body {
         width: 144px; height: 144px;
         background-color: hsla(0,0%,100%,.01);
     }
+    &.hide {
+        display: none;
+    }
 }
 .large-inner{
     width: 100%;

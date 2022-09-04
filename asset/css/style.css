@@ -251,6 +251,9 @@ body {
   height: 144px;
   background-color: hsla(0deg, 0%, 100%, 0.01);
 }
+.cursor.hide {
+  display: none;
+}
 
 .large-inner {
   width: 100%;
